@@ -1043,7 +1043,9 @@ func flattenRoutesData(routesList []pritunl.Route) []interface{} {
 
 			routeMap["network"] = route.Network
 			routeMap["nat"] = route.Nat
-			routeMap["net_gateway"] = route.NetGateway
+			if route.NetGateway == true {
+				routeMap["net_gateway"] = route.NetGateway
+			}
 			if route.Comment != "" {
 				routeMap["comment"] = route.Comment
 			}
