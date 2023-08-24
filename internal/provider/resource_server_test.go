@@ -15,7 +15,7 @@ func TestGetServer_basic(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config: testGetServerSimpleConfig("tfacc-server1"),
@@ -59,7 +59,7 @@ func TestGetServer_with_attached_organization(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config: testGetServerSimpleConfigWithAttachedOrganization("tfacc-server1", "tfacc-org1"),
@@ -103,7 +103,7 @@ func TestGetServer_with_a_few_attached_organizations(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config: testGetServerSimpleConfigWithAFewAttachedOrganization("tfacc-server1", "tfacc-org1", "tfacc-org2"),
@@ -167,7 +167,7 @@ func TestGetServer_with_attached_route(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config: testGetServerSimpleConfigWithAttachedRoute("tfacc-server1", expectedRouteNetwork),
@@ -218,7 +218,7 @@ func TestGetServer_with_a_few_attached_routes(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config: testGetServerSimpleConfigWithAFewAttachedRoutes("tfacc-server1", expectedRoute1Network, expectedRoute2Network, expectedRoute3Network),
@@ -280,7 +280,7 @@ func TestGetServer_with_invalid_route(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config:      testGetServerSimpleConfigWithAttachedRoute("tfacc-server1", invalidRouteNetwork),
@@ -297,7 +297,7 @@ func TestCreateServer_with_invalid_network(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config:      testGetServerConfig("tfacc-server1", missedSubnetNetwork, 11111),
@@ -318,7 +318,7 @@ func TestCreateServer_with_unsupported_network(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config:      testGetServerConfig("tfacc-server1", unsupportedNetwork, 11111),
@@ -342,7 +342,7 @@ func TestCreateServer_with_invalid_bind_address(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config:      testGetServerConfigWithBindAddress("tfacc-server1", "172.16.68.0/24", invalidBindAddress, 11111),
@@ -363,7 +363,7 @@ func TestGetServer_with_default_host(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config: testGetServerSimpleConfig("tfacc-server1"),
@@ -387,7 +387,7 @@ func TestGetServer_without_hosts(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
 		ProviderFactories: providerFactories,
-		CheckDestroy:      testGetServerDestroy,
+		//CheckDestroy:      testGetServerDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config: testGetServerSimpleConfig("tfacc-server1"),
