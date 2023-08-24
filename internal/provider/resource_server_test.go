@@ -214,7 +214,7 @@ func TestGetServer_with_a_few_attached_routes(t *testing.T) {
 	expectedRoute2Network := "10.3.0.0/24"
 	expectedRoute3Network := "10.4.0.0/32"
 	expectedRouteComment := "tfacc-route"
-	expectedNetGateway := true
+	expectedNetGateway := "true"
 
 	resource.Test(t, resource.TestCase{
 		PreCheck:          func() { preCheck(t) },
